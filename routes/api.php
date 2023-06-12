@@ -48,6 +48,10 @@ Route::resource('transactions.sellers', \App\Http\Controllers\Transaction\Transa
  * Sellers
  */
 Route::resource('sellers', \App\Http\Controllers\Seller\SellerController::class, ['only' => ['index', 'show']]);
+Route::resource('sellers.transactions', \App\Http\Controllers\Seller\SellerTransactionController::class, ['only' => ['index']]);
+Route::resource('sellers.categories', \App\Http\Controllers\Seller\SellerCategoryController::class, ['only' => ['index']]);
+Route::resource('sellers.buyers', \App\Http\Controllers\Seller\SellerBuyerController::class, ['only' => ['index']]);
+Route::resource('sellers.products', \App\Http\Controllers\Seller\SellerProductController::class, ['except' => ['create', 'show', 'edit']]);
 
 /**
  * Users
